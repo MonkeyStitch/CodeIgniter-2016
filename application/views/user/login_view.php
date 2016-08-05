@@ -20,7 +20,7 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary"><?php echo lang("user_login_loginButton"); ?></button>
-            <a href="<?php echo base_url("authen/facebook.php");?>"><img src="<?php echo base_url("images/fb.png");?>"></a>
+            <a href="<?php echo base_url($this->lang_code."/user/facebook");?>"><img src="<?php echo base_url("images/fb.png");?>"></a>
             <a href="<?php echo base_url($this->lang_code."/user/forgot_password");?>"><?php echo lang("user_login_forgotPasswordLink"); ?></a>
             <hr />
             <a href="<?php echo base_url($this->lang_code."/user/register");?>" class="btn btn-success btn-lg "><?php echo lang("user_login_register"); ?></a>
