@@ -10,6 +10,8 @@ $lang["menu_admin"]="ผู้ดูแลระบบ";
 $lang["menu_manageBlog"]="จัดการบล๊อก";
 $lang["menu_manageUsers"]="จัดการข้อมูลผู้ใช้";
 $lang["menu_profile"]="ข้อมูลส่วนตัว";
+$lang["menu_albums"]="อัลบั้ม";
+$lang["menu_change_password"]="เปลี่ยนรหัสผ่าน";
 
 $lang["welcome_text"]="สวัสดีคุณ ";
 $lang["button_clear"]="ล้างข้อมูล";
@@ -58,6 +60,31 @@ $lang["user_register_button"]="สมัครสมาชิก";
 $lang["user_register_captcha"]="Captcha";
 $lang["user_register_captchaError"]="กรุณากรอก Captcha";
 $lang["user_register_captchaInvalid"]="Captcha ไม่ถูกต้อง";
+$lang['user_changepassword_title'] = 'เปลี่ยนรหัสผ่าน';
+$lang['user_change_password_button'] = 'บันทึกรหัสผ่าน';
+
+$lang['user_register_mobile'] = 'เบอร์มือถือ';
+$lang['user_register_mobileError'] = 'กรุณากรอกเบอร์มือถือ';
+$lang['user_register_address'] = 'ที่อยู่';
+$lang['user_register_addressError'] = 'กรุณากรอกที่อยู่';
+
+$lang['user_forgot_password_title'] = 'ลืมรหัสผ่าน';
+$lang['user_forgot_password_button'] = 'ส่งคำขอ';
+
+$lang['user_forgot_password_username'] = 'ชื่อผู้ใช้';
+$lang['user_forgot_password_reset_code'] = 'รหัสรีเซ็ต';
+$lang['user_forgot_password_reset_code_click_link'] = 'กรุณาคลิกที่ลิงค์ด้านล่างสำหรับรีเซ็ตรหัสผ่านของคุณ';
 
 $lang['admin_user_index_title']="จัดการข้อมูลผู้ใช้งาน";
 $lang['datatable_no_data']="ไม่พบข้อมูล";
+
+$lang['admin_user_edit_title']="แก้ไขผู้ใช้งาน : %s";
+$lang['admin_user_edit_permission']="สิทธิการเข้าใช้งาน";
+$lang['admin_user_edit_edit_btn']="แก้ไข";
+
+$lang['user_reset_password_title'] = 'เปลี่ยนรหัสผ่าน';
+$lang['user_reset_password_button'] = 'บันทึก';
+
+$lang['menu_blog'] = 'บล็อก';
+
+$lang['blog_add_blog'] = 'เพิ่มบล็อก';

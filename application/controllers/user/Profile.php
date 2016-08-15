@@ -20,7 +20,7 @@ class Profile extends MY_Controller {
 //		exit();
 
 		$data=(array)$aUser[0];
-		$this->template->write('title', lang("user_profile_title"));
+		$this->template->write('title', lang('menu_profile'));
 		$this->template->write_view('content', 'user/profile_view',$data);
 	    $this->template->render();
 	}

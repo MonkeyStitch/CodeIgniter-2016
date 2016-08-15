@@ -6,6 +6,8 @@ class Users_model extends CI_Model {
         public $permission;
         public $email;
         public $name;
+        public $mobile;
+        public $address;
         public $reset_code;
 
         public function __construct()
@@ -75,10 +77,13 @@ class Users_model extends CI_Model {
         {
                 $this->username    = $this->input->post('username'); 
                 $this->password  = sha1($this->input->post('password'));
+                $this->mobile  = $this->input->post('mobile');
+                $this->address  = $this->input->post('address');
                 $this->permission     = $this->input->post('permission');
-                if(!$this->permission)
-                {
-                        $this->permission  ="USER";
+                if($this->permission && $this->_aUser["permission"] == "ADMIN") {
+                    $this->permission  = "ADMIN";
+                } else {
+                    $this->permission = "USER";
                 }
                 $this->email     = $this->input->post('email');
                 $this->name     = $this->input->post('name');
@@ -112,6 +117,7 @@ class Users_model extends CI_Model {
 
                 $this->db->where('username',$username);
                 $this->db->update('users', $data);
+				
                 if($this->db->affected_rows() > 0)
                 {
                         // Code here after successful insert
@@ -161,5 +167,34 @@ class Users_model extends CI_Model {
                         return false;
                 }
         }
+
+		public function forgot_password()
+		{
+                $this->username    = $this->input->post('username'); 
+                $this->email  = $this->input->post('email');
+                $aUser=$this->db->get_where('users', array("username"=>$this->username,"email"=>$this->email),1)->result();
+				if(isset($aUser[0]))
+				{
+					$user=(array)$aUser[0];
+					$reset_code=sha1(date("YmdHis").$this->username);
+
+					$data["reset_code"]=$reset_code;
+					$this->db->where('username',$this->username);
+					$this->db->update('users', $data);
+					if($this->db->affected_rows() > 0)
+					{
+							return true;
+					}
+					else
+					{
+							return false;
+					}
+				}
+				else
+				{
+					return false;
+				}
+                //echo "<pre>";print_r($data);exit;
+		}
 
 }

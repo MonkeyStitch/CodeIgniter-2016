@@ -5,6 +5,23 @@
         <div class="bg-danger text-error">
         <?php echo validation_errors(); ?>
         </div>
+
+        <?php
+
+//        echo '<pre>';print_r($this->_aUser);exit();
+
+        if (strpos($this->_aUser['username'], "fb@") !== false) {
+            $fb_id = str_replace('fb@', '', $this->_aUser['username']);
+            $picture_url = 'http://graph.facebook.com/'.$fb_id.'/picture?type=large';
+
+        ?>
+            <img class="img-responsive" src="<?php echo $picture_url; ?>" alt="" />
+            (<?php echo $name; ?>)
+        <?php
+        }
+        ?>
+
+
         <form name="registerForm" id="registerForm" novalidate action="<?php echo base_url($this->lang_code."/user/profile/do_edit");?>" method="post">
             <div class="control-group form-group">
                 <div class="controls">

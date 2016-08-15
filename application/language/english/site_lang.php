@@ -10,6 +10,8 @@ $lang["menu_admin"]="Administrator";
 $lang["menu_manageBlog"]="Manage Blog";
 $lang["menu_manageUsers"]="Manage Users";
 $lang["menu_profile"]="Profile";
+$lang["menu_albums"]="Albums";
+$lang["menu_change_password"]="Change Password";
 
 $lang["welcome_text"]="Hello, ";
 $lang["button_clear"]="Clear";
@@ -59,8 +61,31 @@ $lang["user_register_captcha"]="Captcha";
 $lang["user_register_captchaError"]="Please enter Captcha";
 $lang["user_register_captchaInvalid"]="Invalid Captcha";
 
+$lang['user_register_mobile'] = 'Mobile';
+$lang['user_register_mobileError'] = 'Please enter your Mobile';
+$lang['user_register_address'] = 'Address';
+$lang['user_register_addressError'] = 'Please enter your Address';
+
+$lang['user_changepassword_title'] = 'Change Password';
+$lang['user_change_password_button'] = 'Save Password';
+
+$lang['user_forgot_password_title'] = 'Forgot Password';
+$lang['user_forgot_password_button'] = 'Send Mail';
+
+$lang['user_forgot_password_username'] = 'Username';
+$lang['user_forgot_password_reset_code'] = 'Reset Code';
+$lang['user_forgot_password_reset_code_click_link'] = 'Please click link below for reset your password';
+
+
 $lang['admin_user_index_title']="Manage Users";
 $lang['admin_user_edit_title']="Edit User : %s";
 $lang['admin_user_edit_permission']="Permission";
 $lang['admin_user_edit_edit_btn']="Edit";
 $lang['datatable_no_data']="No data.";
+
+$lang['user_reset_password_title'] = 'Reset Password';
+$lang['user_reset_password_button'] = 'Save';
+
+$lang['menu_blog'] = 'Blog';
+
+$lang['blog_add_blog'] = 'Add Blog';

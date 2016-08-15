@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/git/ci2016';
+//$config['base_url'] = 'http://127.0.0.1/git/ci2016';
+$config['base_url'] = 'http://ci2016.ci';
 
 /*
 |--------------------------------------------------------------------------
