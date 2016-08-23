@@ -15,6 +15,7 @@ $lang["menu_change_password"]="Change Password";
 
 $lang["welcome_text"]="Hello, ";
 $lang["button_clear"]="Clear";
+$lang["button_save"]="Save";
 
 $lang["home_nameTitle"]="Name";
 $lang["home_nicknameTitle"]="Nick name";
@@ -88,4 +89,12 @@ $lang['user_reset_password_button'] = 'Save';
 
 $lang['menu_blog'] = 'Blog';
 
+$lang['blog_image'] = 'Image';
 $lang['blog_add_blog'] = 'Add Blog';
+$lang['blog_subject'] = 'Subject or Title';
+$lang['blog_details'] = 'Details';
+$lang['blog_subject_error'] = 'Please enter your Subject or Title';
+$lang['blog_details_error'] = 'Please enter your Details';
+$lang['blog_blog_search'] = 'Blog Search';
+$lang['blog_insert_blog'] = 'Insert Blog';
+$lang['blog_list_authors'] = 'List Authors';

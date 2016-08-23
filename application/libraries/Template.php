@@ -417,17 +417,21 @@ class Template {
    }
 
    // --------------------------------------------------------------------
-   
+
    /**
     * Dynamically include javascript in the template
-    * 
+    *
     * NOTE: This function does NOT check for existence of .js file
     *
     * @access  public
-    * @param   string   script to import or embed
-    * @param   string  'import' to load external file or 'embed' to add as-is
-    * @param   boolean  TRUE to use 'defer' attribute, FALSE to exclude it
-    * @return  TRUE on success, FALSE otherwise
+    * @param $script
+    * @param string $type
+    * @param bool $defer
+    * @param bool $top
+    * @return TRUE on success, FALSE otherwise
+    * @internal param script $string to import or embed
+    * @internal param $string 'import' to load external file or 'embed' to add as-is
+    * @internal param TRUE $boolean to use 'defer' attribute, FALSE to exclude it
     */
    
    function add_js($script, $type = 'import', $defer = FALSE)
@@ -475,6 +479,7 @@ class Template {
       {
          $this->js[] = $js;
          $this->write('_scripts', $js);
+         
       }
       
       return $success;

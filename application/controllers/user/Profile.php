@@ -16,7 +16,7 @@ class Profile extends MY_Controller {
 		$aUser=$this->users_model->check_username($this->_aUser["username"]);
 
 //		echo '<pre>';
-//		print_r($this->_aUser["username"]);
+//		print_r($this->_aUser);
 //		exit();
 
 		$data=(array)$aUser[0];
@@ -30,6 +30,8 @@ class Profile extends MY_Controller {
 
 		$this->form_validation->set_rules('name', 'Name', 'required|trim');
 		$this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
+		$this->form_validation->set_rules('mobile', 'Mobile', 'required|trim');
+		$this->form_validation->set_rules('address', 'Address', 'required|trim');
 
 		if ($this->form_validation->run() !== FALSE)
         {
@@ -49,6 +51,8 @@ class Profile extends MY_Controller {
 		$data["username"]=$this->_aUser["username"];
 		$data["name"]=$this->input->post("name");
 		$data["email"]=$this->input->post("email");
+		$this["mobile"] = $this->input->post('mobile');
+		$this["address"]  = $this->input->post('address');
 
 		$this->template->write('title', lang("user_profile_title"));
 		$this->template->write_view('content', 'user/profile_view',$data);

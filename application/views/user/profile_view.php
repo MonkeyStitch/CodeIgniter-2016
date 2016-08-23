@@ -41,6 +41,20 @@
                     <input type="email" class="form-control" name="email" id="email" value="<?php echo $email; ?>" required data-validation-required-message="<?php echo lang("user_register_emailError"); ?>" data-validation-email-message="<?php echo lang("user_register_emailInvalid"); ?>">
                 </div>
             </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label><?php echo lang("user_register_mobile"); ?>:</label>
+                    <input type="tel" class="form-control" name="mobile" id="mobile" value="<?php echo $mobile; ?>"
+                           required data-validation-required-message="<?php echo lang("user_register_mobileError"); ?>">
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label><?php echo lang("user_register_address"); ?>:</label>
+                    <input type="text" class="form-control" name="address" id="address" value="<?php echo $address; ?>"
+                           required data-validation-required-message="<?php echo lang("user_register_addressError"); ?>">
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary"><?php echo lang("admin_user_edit_edit_btn"); ?></button>
             
         	

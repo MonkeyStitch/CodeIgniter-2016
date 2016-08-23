@@ -15,6 +15,7 @@ $lang["menu_change_password"]="เปลี่ยนรหัสผ่าน";
 
 $lang["welcome_text"]="สวัสดีคุณ ";
 $lang["button_clear"]="ล้างข้อมูล";
+$lang["button_save"]="บันทึกข้อมูล";
 
 $lang["home_nameTitle"]="ชื่อจริง";
 $lang["home_nicknameTitle"]="ชื่อเล่น";
@@ -87,4 +88,12 @@ $lang['user_reset_password_button'] = 'บันทึก';
 
 $lang['menu_blog'] = 'บล็อก';
 
+$lang['blog_image'] = 'รูปภาพ';
 $lang['blog_add_blog'] = 'เพิ่มบล็อก';
+$lang['blog_subject'] = 'ชื่อเรื่อง/ประเด็น/กระทู้';
+$lang['blog_details'] = 'รายละเอียดข้อมูล';
+$lang['blog_subject_error'] = 'กรุณากรอกชื่อเรื่อง/ประเด็น/กระทู้';
+$lang['blog_details_error'] = 'กรุณากรอกรายละเอียดข้อมูล';
+$lang['blog_blog_search'] = 'ค้นหาบล็อก';
+$lang['blog_insert_blog'] = 'เพิ่มบล็อก';
+$lang['blog_list_authors'] = 'รายชื่อผู้เขียนบล็อก';

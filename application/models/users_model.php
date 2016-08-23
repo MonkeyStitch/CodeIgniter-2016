@@ -114,6 +114,8 @@ class Users_model extends CI_Model {
 				}
                 $data["email"]     = $this->input->post('email');
                 $data["name"]     = $this->input->post('name');
+                $data["mobile"] = $this->input->post('mobile');
+                $data["address"]  = $this->input->post('address');
 
                 $this->db->where('username',$username);
                 $this->db->update('users', $data);
@@ -197,4 +199,19 @@ class Users_model extends CI_Model {
                 //echo "<pre>";print_r($data);exit;
 		}
 
+
+        public function delete_user($username)
+        {
+                $this->db->where('username', $username);
+                $this->db->delete('users');
+
+                if($this->db->affected_rows() > 0)
+                {
+                        return true;
+                }
+                else
+                {
+                        return false;
+                }
+        }
 }
