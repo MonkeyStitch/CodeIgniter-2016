@@ -7,6 +7,7 @@ class Posts_model extends MY_Model {
     public $subject;
     public $details;
     public $date_time;
+    public $picture;
 
 
     public function __construct()
@@ -15,14 +16,16 @@ class Posts_model extends MY_Model {
         
     }
     
-    public function insert_post($username){
+    public function insert_post($username, $path_file){
 
+//        echo '<pre>';print_r($path_file);exit;
         $this->username = $username;
         $this->subject = $this->input->post('subject_blog');
         $this->details = $this->input->post('details_blog');
-        $this->date_time = now();
+        $this->picture = $path_file;
+        $this->date_time = date('Y-m-d H:i:s');
         
-        $this->db->insert('');
+        $this->db->insert('posts', $this);
 
         if($this->db->affected_rows() > 0)
         {

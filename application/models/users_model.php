@@ -6,8 +6,6 @@ class Users_model extends CI_Model {
         public $permission;
         public $email;
         public $name;
-        public $mobile;
-        public $address;
         public $reset_code;
 
         public function __construct()
@@ -77,13 +75,10 @@ class Users_model extends CI_Model {
         {
                 $this->username    = $this->input->post('username'); 
                 $this->password  = sha1($this->input->post('password'));
-                $this->mobile  = $this->input->post('mobile');
-                $this->address  = $this->input->post('address');
                 $this->permission     = $this->input->post('permission');
-                if($this->permission && $this->_aUser["permission"] == "ADMIN") {
-                    $this->permission  = "ADMIN";
-                } else {
-                    $this->permission = "USER";
+                if(!$this->permission || $this->_aUser["permission"]!="ADMIN")
+                {
+                        $this->permission  ="USER";
                 }
                 $this->email     = $this->input->post('email');
                 $this->name     = $this->input->post('name');
@@ -114,8 +109,6 @@ class Users_model extends CI_Model {
 				}
                 $data["email"]     = $this->input->post('email');
                 $data["name"]     = $this->input->post('name');
-                $data["mobile"] = $this->input->post('mobile');
-                $data["address"]  = $this->input->post('address');
 
                 $this->db->where('username',$username);
                 $this->db->update('users', $data);
@@ -199,12 +192,37 @@ class Users_model extends CI_Model {
                 //echo "<pre>";print_r($data);exit;
 		}
 
+        public function get_json_users($username)
+        {       $this->db->select('username,name,email');
+                $this->db->from('users');
+				if($username!="")
+				{
+					$this->db->where('username',$username);
+				}
+                $this->db->order_by("username", "asc");
+                
+                $query = $this->db->get();
+                $result=$query->result();
+                return json_encode($result);
+        }
 
-        public function delete_user($username)
+        public function insert_from_api($data)
         {
-                $this->db->where('username', $username);
-                $this->db->delete('users');
-
+                $this->db->insert('users', $data);
+                if($this->db->affected_rows() > 0)
+                {
+                        return true; 
+                }
+                else
+                {
+                        return false;
+                }
+        }
+		public function edit_from_api($username,$data)
+        {
+                $this->db->where('username',$username);
+                $this->db->update('users', $data);
+				
                 if($this->db->affected_rows() > 0)
                 {
                         return true;
@@ -214,4 +232,19 @@ class Users_model extends CI_Model {
                         return false;
                 }
         }
+
+        public function delete($username)
+        {
+			$this -> db -> where('username', $username);
+			$this -> db -> delete('users');
+			if($this->db->affected_rows() > 0)
+			{
+					return true;
+			}
+			else
+			{
+					return false;
+			}
+        }
+
 }

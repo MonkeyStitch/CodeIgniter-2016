@@ -38,9 +38,7 @@ class Forgot_password extends MY_Controller {
 
                     # Set email subject
                     $sEmailSubject = lang('webTitle').' : ' . lang('user_forgot_password_title');
-
-                    //echo '<pre>';print_r($sEmailSubject);exit;
-
+                    
                     $this->email->clear(true);
 
                     $this->email->from('devcomsci29@gmail.com','STITCH');

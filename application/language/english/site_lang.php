@@ -98,3 +98,13 @@ $lang['blog_details_error'] = 'Please enter your Details';
 $lang['blog_blog_search'] = 'Blog Search';
 $lang['blog_insert_blog'] = 'Insert Blog';
 $lang['blog_list_authors'] = 'List Authors';
+
+$lang['contact_student_id'] = 'Student ID';
+$lang['contact_first_name'] = 'First Name';
+$lang['contact_last_name'] = 'Last Name';
+$lang['contact_email'] = 'E-mail';
+$lang['contact_mobile'] = 'Mobile Number';
+$lang['contact_topic'] = 'Topic';
+$lang['contact_details'] = 'Details';
+$lang['contact_created_date'] = 'Contact Date';
+$lang['contact_button'] = 'Send';

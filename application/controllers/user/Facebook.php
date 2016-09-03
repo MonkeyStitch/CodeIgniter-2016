@@ -11,8 +11,8 @@ class Facebook extends MY_Controller {
 		
         $this->load->model("users_model");
 		
-		$app_id='{app_id}';
-		$app_secret='{app_secret}';
+		$app_id='102646150173559';
+		$app_secret='b48e15b8453a725a3d864c45cbb8e15d';
 		$this->fb = new Facebook\Facebook([
 		  'app_id' => $app_id, 
 		  'app_secret' => $app_secret,

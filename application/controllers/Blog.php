@@ -42,11 +42,11 @@ class Blog extends MY_Controller
     public function do_create()
     {
 
-        $config['upload_path']          = base_url().'/uploads/';
+        $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100000;
-//        $config['max_width']            = 1024;
-//        $config['max_height']           = 768;
+        $config['max_size']             = 2000;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
         $config['encrypt_name']         = TRUE;
 
 
@@ -54,29 +54,29 @@ class Blog extends MY_Controller
 
         if ( ! $this->upload->do_upload('image_blog'))
         {
-            $error = array('error' => $this->upload->display_errors());
-
-            echo '<pre>';print_r($error);exit;
+            $this->setNotification("fail", strip_tags($this->upload->display_errors()));
+            redirect($this->lang_code . '/blog/create', 'refresh');
+            exit();
         }
         else
         {
             $data = array('upload_data' => $this->upload->data());
-            echo '<pre>';print_r($data);exit;
-            $this->load->view('errors/upload/upload_success', $data);
-        }
-        exit;
+//            echo '<pre>';print_r($data['upload_data']['file_name']);exit;
+//            $this->load->view('errors/upload/upload_success', $data);
+            
+            $this->form_validation->set_rules('subject_blog', 'Subject Blog', 'required');
+            $this->form_validation->set_rules('details_blog', 'Details Blog', 'required');
 
-        $this->form_validation->set_rules('subject_blog', 'Subject Blog', 'required');
-        $this->form_validation->set_rules('details_blog', 'Details Blog', 'required');
+            if ($this->form_validation->run() !== FALSE)
+            {
+                if($this->posts_model->insert_post($this->_aUser['username'], $data['upload_data']['file_name'])){
+                    $this->setNotification("success","Insert success");
+                    redirect($this->lang_code.'/blog','refresh');
 
-        if ($this->form_validation->run() !== FALSE)
-        {
-            if($this->posts_model->insert_post($this->_aUser['username'])){
-                $this->setNotification("success","Register success");
-                redirect($this->lang_code.'/blog/posts/','refresh');
-                exit;
+                }
             }
         }
+
     }
 
 

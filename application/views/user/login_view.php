@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="bg-danger text-error">
-        <?php echo validation_errors(); ?>
+            <?php echo validation_errors(); ?>
         </div>
         <form name="loginForm" id="loginForm" novalidate action="<?php echo base_url($this->lang_code."/user/login/do_login");?>" method="post">
             <div class="control-group form-group">
