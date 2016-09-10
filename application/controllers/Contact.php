@@ -76,7 +76,7 @@ class Contact extends MY_Controller
                 $this->load->library('email');
 
                 # Set email subject
-                $sEmailSubject = lang('webTitle').' : ' . lang('menu_contact');
+                $sEmailSubject = lang('menu_contact').' : ' . $data['topic'];
 
                 $this->email->clear(true);
 
@@ -84,7 +84,7 @@ class Contact extends MY_Controller
 
 //                $this->email->to('tisstyle.game1@gmail.com');
 //                $this->email->to('stitch39@outlook.com');
-                $this->email->to('thonkong@outlook.com'); // mail P'pete
+                $this->email->to('thonkong@outlook.com,tisstyle.game1@gmail.com'); // mail P'pete
 
                 $this->email->subject($sEmailSubject);
                 $html=$this->load->view('contact/message_contact_view', $data, true);
